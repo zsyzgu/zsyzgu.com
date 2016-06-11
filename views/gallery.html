@@ -107,13 +107,21 @@
                                     <h4>相册</h4>
                                 </div><br style="clear:both;"/>
                             </div>
+							
+							<script>
+								var xmlhttp = new XMLHttpRequest();
+								xmlhttp.open("GET", "public/images/gallery/gallery.json", false);
+								xmlhttp.send();
+								var files = JSON.parse(xmlhttp.responseText);
+							</script>
+
+							<select name='tagSelection' style='width:200px' onchange='location.href=this.options[this.selectedIndex].value;'>
+								<option value='page_1.html' selected>1</option>
+								<option value='page_2.html'>2</option>
+							</select>
 
 							<div id="content" class="gallery-images-container">
 							<script>
-								var xmlhttp = new XMLHttpRequest();
-								xmlhttp.open("GET", "public/images/gallery.json", false);
-								xmlhttp.send();
-								var files = JSON.parse(xmlhttp.responseText);
 								for (var i in files) {
 									document.write('<div class="box">');
 									document.write('<a href="public/images/gallery/' + files[i].ima + '"><img alt="Agra picture" src="public/images/gallery/' + files[i].ima + '"></a>');
