@@ -1,0 +1,19 @@
+{
+	"private" : true,
+	"name": "zsyzgu.com",
+	"version": "0.0.0",
+	"description": "zsyzgu's personal homepage",
+	"author": "zsyzgu",
+	"license": "ISC",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/zsyzgu/zsyzgu.com.git"
+	},
+	"browser": {
+		"jquery": "./app/static/libs/jquery.min.js"
+	},
+	"dependencies": {
+		"express": "latest",
+		"font-awesome": "4.4.0"
+	}
+}
