@@ -20,10 +20,10 @@ http.createServer(function (req, res) {
 		});
 	} else {
 		var mapping = [
-			{suf: '.js', type: 'text/javascript'},
-			{suf: '.css', type: 'text/css'},
-			{suf: '.png', type: 'image/png'},
-			{suf: '.jpg', type: 'image/jpeg'}
+			{"suf": ".js"	, "type": "text/javascript"	},
+			{"suf": ".css"	, "type": "text/css"		},
+			{"suf": ".png"	, "type": "image/png"		},
+			{"suf": ".jpg"	, "type": "image/jpeg"		}
 		];
 		var find = 0;
 		for (var obj in mapping) {

@@ -14,7 +14,7 @@
     <script src="public/js/imagesloaded.3.1.8.min.js"></script>
     <script src="public/js/jquery.masonry.3.2.1.min.js"></script> <!-- http://masonry.desandro.com/ -->
     <script src="public/js/jquery.magnific-popup.min.js"></script> <!-- http://dimsemenov.com/plugins/magnific-popup/ -->
-    <title>相册</title>
+    <title>zsyzgu的首页</title>
 </head>
 
 <body class="gallery-page">
@@ -109,24 +109,15 @@
                             </div>
                             <div id="content" class="gallery-images-container">
 								<script>
-								files = [
-									{ima: 'lab-render.jpg'	, html: 'lab-render.html'	, comment: '真实感图像渲染技术'				},
-									{ima: 'lab-VR-WGK.jpg'	, html: 'lab-VR-WGK.html'	, comment: '虚拟现实中的文本输入'			},
-									{ima: 'lab-DGK.png'		, html: 'lab-DGK.html'		, comment: '软键盘动态分组技术'				},
-									{ima: 'ai9-DV2.png'		, html: 'ai9-DV2.html'		, comment: '智能体20th名人采访'				},
-									{ima: 'ai9-DV3.png'		, html: 'ai9-DV3.html'		, comment: '智能体20th纪念视频'				},
-									{ima: 'ai9-DV1.png'		, html: 'ai9-DV1.html'		, comment: '智能体20th故事背景'				},
-									{ima: 'ai9-lota.jpg'	, html: 'ai9-lota.html'		, comment: '智能体19th游戏-LOTA'			},
-									{ima: 'ai9-dorado.jpg'	, html: 'ai9-dorado.html'	, comment: '智能体20th游戏-DORADO'			},
-									{ima: 'u3d-alche.png'	, html: 'u3d-alche.html'	, comment: 'u3d游戏-练剑术士'				},
-									{ima: 'u3d-cedric.png'	, html: 'u3d-cedric.html'	, comment: 'u3d游戏-锡德里克(leap motion)'	},
-									{ima: 'u3d-island.png'	, html: 'u3d-island.html'	, comment: 'u3d游戏-荒岛求生'				}
-								];
+								var xmlhttp = new XMLHttpRequest();
+								xmlhttp.open("GET", "public/images/index.json", false);
+								xmlhttp.send();
+								var files = JSON.parse(xmlhttp.responseText);
 								for (var i in files) {
 									document.write('<div class="box">');
-									document.write('<a href="' + files[i].html + '"><img alt="Agra picture" src="public/images/' + files[i].ima + '"></a>');
+									document.write('<a href="' + files[i].html + '"><img alt="Agra picture" src="public/images/index/' + files[i].ima + '"></a>');
 									if (files[i].comment != null && files[i].comment != '') {
-										document.write('<div class="picture-comment"><h4><b>' + files[i].comment + '</b></h4></div>');
+										document.write('<div class="picture-comment">' + files[i].comment + '</div>');
 										document.write('</div>');
 									}
 								}
